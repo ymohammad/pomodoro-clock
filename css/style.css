@@ -1,0 +1,148 @@
+body {
+				background-image: url("https://cloud.githubusercontent.com/assets/15900954/18045726/ed2dbc90-6df1-11e6-99b4-5c3e681f926d.jpg");
+			}
+			.main_div_css {
+				width: 20%;
+			    height: 22%;
+			    padding: 3%;
+			    border: 5px solid #181717;
+			    margin-right: 1%;
+			    margin-left: 1%;
+			    display: inline-block;
+			    font-family: 'Black Ops One', 'Copperplate Gothic Light', fantasy;
+			    font-size: 75px;
+			    box-shadow: 0 0 18px gray;
+			    z-index: 9;
+    			position: relative;
+			}
+			#min_container {
+				z-index: 9;
+    			position: relative;
+			}
+			#min_str {
+				z-index: 9;
+    			position: relative;
+			}
+			#sec_container {
+				z-index: 9;
+    			position: relative;
+			}
+			#sec_str {
+				z-index: 9;
+    			position: relative;
+			}
+			.slide-container {
+				 margin-top: 7%;
+			}
+			.normal_text {
+				font-family: 'Black Ops One', 'Copperplate Gothic Light', fantasy;
+			    font-size: 25px;
+			    color:#ffff;
+			}
+			.status-div-style {
+				font-family: 'Baloo Chettan', 'Copperplate Gothic Light', fantasy;
+			    font-size: 22px;
+			    color:#000;
+			    text-align: center;
+			}
+			.pomodoro-settings-text {
+				font-family: 'Baloo Chettan';
+			    font-size: 20px;
+			    font-weight: 900;
+				
+			}
+			.pomodoro-settings-div {
+				padding-left: 35%;
+    			width: 90%;
+    			height: 50%;
+   				overflow: auto;
+			}
+			.pomodoro-settings-col-div {
+				margin: 10px auto;
+			    width: 30%;
+			    overflow: auto;
+			}
+			h1 {
+				font-family: 'Black Ops One', 'Gravitas One', 'Copperplate Gothic Light', fantasy;
+			    line-height: 40px;
+			    text-align: center;
+			    font-weight: bold;
+			}
+			h3 {
+				font-family: 'Baloo Chettan';
+			}
+			.round-button-container {
+			    margin-top: 2%;
+			    margin-bottom: 2%;
+			    display: inline-block;
+			}
+
+			.round-button {
+			
+				float: left;
+			    width: 100%;
+			    line-height: 1em;
+			    text-align: center;
+			    font-family: Verdana;
+			    font-size: 1.2em;
+			    font-weight: bold;
+			    text-decoration: none;
+			}
+			.round-button-play {
+				background-color:#4679BD;
+				color: #e2eaf3;
+			}
+			.round-button-play:hover {
+			    background: #262626;
+			}
+			.round-button-reset {
+				background-color:#4679BD;
+				color: #e2eaf3;
+			}
+			.round-button-reset:hover {
+			    background: #262626;
+			}
+			 
+			.site-footer {
+				background-color: #000;
+			    border-top: 1px solid #333;
+			    color: #999;
+			    font-size: 15px;
+			    text-align: center;
+				padding: 15px 0;
+				font-family: Alegreya;
+				margin-top: 2%;
+			}
+			.site-header {
+			    position: relative;
+			    height: 90px;
+			    width: 100%;
+			    margin: 0 0 8px;
+			    border-bottom: 2px solid rgb(70, 121, 189);
+			    background-color: #000;
+			    color: #fff;
+			}
+			.pomodoro-info {
+				width: 35%;
+				display: inline;
+			    float: left;
+			    text-align: left;
+			    margin-left: 2%;
+			}
+			.text-fields-style {
+				width: 70% !important;
+				font-weight: bolder;
+			}
+			.bullet-style {
+				font-family: 'Baloo Chettan';
+			}
+	
+			.div-progress-style {
+			    background-color: #ff6961;
+			    z-index;1
+			    width: 0px;
+			    position:absolute;
+			    left:0px;
+			    top:0px;
+			    width: 100%;
+			}

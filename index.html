@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Pomodoro Clock</title>
+  
+  
+  <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css'>
+<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Gravitas+One'>
+<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Black+Ops+One'>
+<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Alegreya'>
+<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Baloo+Chettan'>
+<link rel='stylesheet prefetch' href='https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  	<div class="row site-header">
+		<h1>Free Code Camp - Pomodoro Clock</h1>
+		</div>
+		<div class="row text-center">
+			<div class="round-button-container"> 
+				<div class="round-button-circle">
+					<a href="#" id="runbtn" class="btn btn-info btn-lg round-button round-button-play">
+						<span class="glyphicon glyphicon-play-circle"></span> Start
+					</a>
+				</div>
+			</div>
+			<div class="round-button-container"> 
+				<div class="round-button-circle">
+					<a href="#" id="resetBtn" class="btn btn-info btn-lg round-button round-button-reset">
+						<span class="glyphicon glyphicon glyphicon-home"></span> Reset
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="row text-center">
+			<div class="col-md-10" style="margin-top: 0%;float:none;">
+				<span class="pomodoro-info">
+				  <h3     style="margin-top: 0%;">The Pomodoro Technique</h3>
+				  <ul class="bullet-style">
+				  	<li >Choose a task to be accomplished.</li>
+				    <li >Set the Pomodoro to 25 minutes (the Pomodoro is the timer).</li>
+				    <li >Click on the Start button to start the timer.</li>
+				    <li >Work on the task until the Pomodoro completes. Automatically the timer for Break started.</li>
+				    <li >Take a short break (5 minutes is OK)</li>
+				    <li >Once break timer completes, next session starts with a set session length.</li>
+				    <li >Every 4 Pomodoros take a longer break.</li></ul>
+				</span>
+				<div id="main-div" class="main_div_css" style="margin-left: -15%;">
+					<div id="min-progress-bar" class="div-progress-style"></div>
+					<div id="min_container">02</div>
+					<div id="min_str" class="normal_text">Minutes</div>
+				</div>
+				
+				<div id="main-div2" class="main_div_css">
+					<div id="sec-progress-bar" class="div-progress-style"></div>
+					<div id="sec_container">00</div>
+					<div id="sec_str" class="normal_text">Seconds</div>
+				</div>
+			</div>
+			
+		</div>
+		<div id="session_name" class="status-div-style"></div>
+		<div class = "row text-center pomodoro-settings-div" style="margin-top: 1%;">
+			<div class="col-sm-3 pomodoro-settings-col-div">
+				    <div class="input-group pomodoro-settings-text">
+				    	Session Length
+				     </div>
+			</div>
+			<div class="col-sm-3">
+				<div class="center">
+				    <p>
+				      </p><div class="input-group">
+				          <span class="input-group-btn">
+				              <button type="button" id="ses-dec-btn" class="btn btn-danger btn-number"  data-type="minus" data-field="session-length">
+				                <span class="glyphicon glyphicon-minus"></span>
+				              </button>
+				          </span>
+				          <input type="text" name="session-length-txt" id ="session-length-txt" class="text-fields-style form-control input-number" value="25" min="1" max="100" readonly>
+				          <span class="input-group-btn">
+				              <button type="button" id="ses-inc-btn" class="btn btn-success btn-number" data-type="plus" data-field="session-length" style="margin-left: -105px;">
+				                  <span class="glyphicon glyphicon-plus"></span>
+				              </button>
+				          </span>
+				      </div>
+					<p></p>
+				</div>
+			</div>
+		</div>
+		<div class = "row text-center pomodoro-settings-div">
+			<div class="col-sm-3 pomodoro-settings-col-div">
+				    <div class="input-group pomodoro-settings-text">
+				    	Break Length
+				     </div>
+			</div>
+			<div class="col-sm-3">
+				<div class="center">
+				    <p>
+				      </p><div class="input-group">
+				          <span class="input-group-btn">
+				              <button type="button" id="brk-dec-btn" class="btn btn-danger btn-number"  data-type="minus" data-field="break-length-txt">
+				                <span class="glyphicon glyphicon-minus"></span>
+				              </button>
+				          </span>
+				          <input type="text" name="break-length-txt" id="break-length-txt" class="text-fields-style form-control input-number" value="05" min="1" max="100" readonly>
+				          <span class="input-group-btn">
+				              <button type="button" id="brk-inc-btn" class="btn btn-success btn-number" data-type="plus" data-field="break-length-txt" style="margin-left: -105px;">
+				                  <span class="glyphicon glyphicon-plus"></span>
+				              </button>
+				          </span>
+				      </div>
+					<p></p>
+				</div>
+			</div>
+		</div>
+		<footer class="site-footer">
+		<div>Developed by <a href="https://www.linkedin.com/in/mohammad-sufiyan-al-yousufi-0279743a" target="_blank" style="font-size: inherit;">Mohammad Sufiyan Al Yousufi</a>.<br>Contact information: <a href="mailto:mdsufyan2005@gmail.com" style="font-size: inherit;">mdsufyan2005@gmail.com</a><br>
+		  © 2016 AlySufiyan Software Development Labs </div>
+		</footer>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  		<script src="https://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  		
+		<script type="text/javascript">
+		var POMODORO_CLOCK = "Pomodoro Session...";
+ var BREAK_CLOCK = "Break Session...";
+ var IDLE_CLOCK = "Paused";
+ 
+ function DigitalStopWatch(clockElement, duration, delay, clockType)
+ {
+	 this.clockElement = clockElement;
+	 this.duration = duration; //duration is in Minutes.
+	 this.delay = delay;
+	 this.clockType = clockType;
+	 this.clockInterval;
+	 this.clockCurrentTimeStr = duration + ":00";
+	 this.clockStatus = IDLE_CLOCK;
+	 
+	 this.startClock = function()
+	 {
+		 updateClock();
+		 this.clockInterval =  setInterval(updateClock, 1000);
+		 console.log(">> Started the clock :" + this.clockInterval);
+		 return this.clockInterval;
+	 }
+	 
+	 this.setShowingTime = function(timeInStdFormat)
+	 {
+		 this.clockCurrentTimeStr = timeInStdFormat;
+		 //
+		 console.log(this.clockCurrentTimeStr);
+	 }
+	 this.getShowingTime = function() {
+		 
+		 var minVal = document.getElementById("min_container").innertHTML;
+		 var secVal = document.getElementById("sec_container").innertHTML;
+		 this.clockCurrentTimeStr = minVal + ":" + secVal;
+		 return this.clockCurrentTimeStr;
+		 
+	 }
+	 this.getTimeInSeconds = function(minTime, minSec)
+	 {
+		 return (minTime*60) + minSec;
+	 }
+	 this.getTimeInStndFormat = function(timeInSeconds)
+	 {
+		 var timeInMin = parseInt(timeInSeconds/60);
+		 var timeInSec = parseInt(timeInSeconds%60);
+		 
+		 timeInMin = timeInMin < 10 ? "0" + timeInMin : timeInMin;
+		 timeInSec = timeInSec < 10 ? "0" + timeInSec : timeInSec;
+		 
+		 return timeInMin + ":" + timeInSec;
+	 }
+	 this.stopClock = function(clockThId) {
+		 //if(this.clockInterval) 
+		 {
+			 console.log(">>> Sotpping the clock " + clockThId);
+			 var intV = clearInterval(clockThId);
+			 console.log(">>> Sotpping the clock.." + intV);
+		 }
+	 }
+ }
+      
+		 var digitalClk = new DigitalStopWatch(null, getSessionInterval());
+		 var isSessionStarted = false;
+		 var isPomodoro = true;
+		 var currentClkThId;
+		 
+		 function resetButtonsCss() {
+			 $('#runbtn').html("<span class='glyphicon glyphicon-play-circle'></span> Start");
+			 $('#runbtn').hover(function(){
+			        $(this).css("background-color", "#262626");
+			        }, function(){
+			        $(this).css("background-color", "#4679BD");
+			    });
+		 }
+		 $(document).ready(
+				
+			function() {
+				reset();
+				$('#runbtn').click(function runBtnClick()
+							{
+								
+								if (!isSessionStarted) {
+									 currentClkThId = digitalClk.startClock();
+									 isSessionStarted = true;
+									 $(this).html("<span class='glyphicon glyphicon-pause'></span> Pause");
+									 
+									 $(this).hover(function(){
+									        $(this).css("background-color", "#4679BD");
+									        }, function(){
+									        $(this).css("background-color", "#262626");
+									    });
+									 updateButtonsStatus(true);
+								} else {
+									digitalClk.stopClock(currentClkThId);
+									isSessionStarted = false;
+									$(this).html("<span class='glyphicon glyphicon-play-circle'></span> Continue");
+									
+									$(this).hover(function(){
+									        $(this).css("background-color", "#262626");
+									        }, function(){
+									        $(this).css("background-color", "#4679BD");
+									    });
+								}
+								if (isPomodoro) {
+									digitalClk.clockStatus = POMODORO_CLOCK;
+								} else {
+									digitalClk.clockStatus = BREAK_CLOCK;
+								}
+							}
+				);
+				
+			  $('#ses-inc-btn').click(function sessionIncreaseClick(){
+				  var sessionLength = parseInt($('#session-length-txt').val()) + 1;
+				  sessionLength = sessionLength < 10 ? "0" + sessionLength : sessionLength;
+				  $('#session-length-txt').val((sessionLength));
+				  $('#min_container').text($('#session-length-txt').val());
+			  });
+			  
+			  $('#ses-dec-btn').click(function sessionIncreaseClick(){
+				  var sessionLength = parseInt($('#session-length-txt').val()) - 1;
+				  if (sessionLength > 0) {
+					  sessionLength = sessionLength < 10 ? "0" + sessionLength : sessionLength;
+					  $('#session-length-txt').val((sessionLength));
+					  $('#min_container').text($('#session-length-txt').val());
+				  }
+			  });
+			  
+			  
+			  $('#brk-inc-btn').click(function sessionIncreaseClick(){
+				  var sessionLength = parseInt($('#break-length-txt').val()) + 1;
+				  sessionLength = sessionLength < 10 ? "0" + sessionLength : sessionLength;
+				  $('#break-length-txt').val((sessionLength));
+			  });
+			  $('#brk-dec-btn').click(function sessionIncreaseClick(){
+				  var sessionLength = parseInt($('#break-length-txt').val()) - 1;
+				  if (sessionLength > 0) {
+					  sessionLength = sessionLength < 10 ? "0" + sessionLength : sessionLength;
+					  $('#break-length-txt').val((sessionLength));
+				  }
+			  });
+			  
+			  //Reset button action...
+			  $('#resetBtn').click(reset);
+			  
+			  } 
+		);
+		 function updateButtonsStatus(status) {
+			 $('#ses-inc-btn').prop('disabled', status);
+			 $('#ses-dec-btn').prop('disabled', status);
+			 $('#brk-inc-btn').prop('disabled', status);
+			 $('#brk-dec-btn').prop('disabled', status);
+		 }
+		 function getSessionInterval() {
+			 
+			 if (isPomodoro) {
+					return parseInt($('#session-length-txt').val());
+				} else {
+					return parseInt($('#break-length-txt').val());
+				}
+		 }
+		 
+		 function updateClock()
+		 {
+				 var minuteStr = $('#min_container')[0].textContent;
+				 var secondsStr = $('#sec_container')[0].textContent;
+				 
+				 var showingTimeInSec = digitalClk.getTimeInSeconds(parseInt(minuteStr), parseInt(secondsStr));
+				 if(showingTimeInSec > 0) {
+					 
+					 showingTimeInSec = showingTimeInSec-1;
+					 var timeInMin = parseInt(showingTimeInSec/60);
+					 var timeInSec = parseInt(showingTimeInSec%60);
+					 
+					 timeInMin = timeInMin < 10 ? "0" + timeInMin : timeInMin;
+					 timeInSec = timeInSec < 10 ? "0" + timeInSec : timeInSec;
+					 
+					 $('#min_container')[0].innerHTML = timeInMin;
+					 $('#sec_container')[0].innerHTML = timeInSec;
+					 fillProgressColor(timeInMin, timeInSec);
+					 updateSessionName();
+				 } else if(isPomodoro){
+					 isPomodoro = false;
+					 digitalClk.clockStatus = BREAK_CLOCK;
+					 resetProgressBar("#7d7");
+					 $('#min_container').text($('#break-length-txt').val());
+					 updateSessionName();
+					 updateClock();
+				 } else {
+					 isPomodoro = true;
+					 digitalClk.clockStatus = POMODORO_CLOCK;
+					 $('#min_container').text($('#session-length-txt').val());
+					 resetProgressBar("#ff6961");
+					 updateSessionName();
+					 updateClock();
+				 }
+		 }
+		 function resetProgressBar(backgroundColor) {
+			 $('#sec-progress-bar').css({"height": "0%",
+					 "transform": "translate(0px, 211px)",
+					 "background-color":backgroundColor});
+			 $('#min-progress-bar').css({"height": "0%",
+				 "transform": "translate(0px, 211px)",
+				 "background-color":backgroundColor});
+		 }
+		 function updateSessionName() {
+			 if (isPomodoro) {
+				 $('#session_name').text(POMODORO_CLOCK);
+			 } else {
+				 $('#session_name').text(BREAK_CLOCK);
+			 }
+			 blinkText();
+		 }
+		 function blinkText(){
+			 $('#session_name').fadeOut('slow', function(){
+			 	$(this).fadeIn('slow', function(){
+			 		blinkText();
+			 	});
+			 });
+		 }
+		 function resetSessionName() {
+			$('#session_name').text("");
+		 }
+		 function fillProgressColor(timeInMin, timeInSec) {
+			 //Color filling for seconds.
+			 var htProgressBar = Math.round((100*(60-parseInt(timeInSec)))/60);
+			 var transProgress = Math.round((211*parseInt(timeInSec))/60);
+			 $('#sec-progress-bar').css({"height": htProgressBar + "%",
+				 						 "transform": "translate(0px, " + transProgress + "px)"});
+			 
+			 //Color filling for minutes.
+			 //Avoiding filling for first iteration.
+			 var totalStartTimeInSec = (parseInt(getSessionInterval())*60);
+			 var totalRemainTimeInSec = (parseInt(timeInMin)*60)+parseInt(timeInSec);
+			 //if ((sessionInterval - parseInt(timeInMin)) > 1) 
+			 {
+				 htProgressBar = Math.round((100*(totalStartTimeInSec - totalRemainTimeInSec))/totalStartTimeInSec);
+				 transProgress = Math.round((211*totalRemainTimeInSec)/totalStartTimeInSec);
+				 $('#min-progress-bar').css({"height": htProgressBar + "%",
+					 						 "transform": "translate(0px, " + transProgress + "px)"});
+			 }
+		 }
+		 function reset() {
+			 var defaultColor = "#ff6961";
+			 digitalClk.stopClock(currentClkThId);
+			 isPomodoro = true;
+			 isSessionStarted = false;
+			 resetProgressBar(defaultColor);
+			 digitalClk.clockStatus = POMODORO_CLOCK;
+			 $('#min_container').text($('#session-length-txt').val());
+			 $('#sec_container').text("00");
+			 resetButtonsCss();
+			 resetSessionName();
+			 updateButtonsStatus(false);
+		 }
+		</script>
+  
+  
+</body>
+</html>
