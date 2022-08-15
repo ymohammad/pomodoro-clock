@@ -1,6 +1,7 @@
 # Pomodoro Clock Using JavaScript.
 
+Technique to manage time. 
 
-A Pen created at CodePen.io. You can find this one at http://codepen.io/ymohammad/pen/bZXQkq.
+Available here https://ymohammad.github.io/pomodoro-clock
 
  
